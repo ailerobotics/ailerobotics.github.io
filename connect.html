@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect - AILE Robotics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Ʌ<span class="logo-i">I</span>LE</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="connect.html" class="nav-link active">Connect</a></li>
+                <li><a href="jobs.html" class="nav-link">Careers</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Connect With Us</h1>
+        <p>Be part of our growing network. Submit your unsolicited application or inquiry.</p>
+    </section>
+
+    <!-- Connect Section -->
+    <section class="connect-section">
+        <div class="container">
+            <div class="connect-wrapper">
+                <!-- Options -->
+                <div class="options-grid">
+                    <div class="option-card">
+                        <h3>Unsolicited Application</h3>
+                        <p>Tell us why you'd be a great fit for AILE Robotics, even if there isn't a specific open position.</p>
+                        <a href="#unsolicited-form" class="btn btn-secondary">Apply Now</a>
+                    </div>
+                    <div class="option-card">
+                        <h3>Partnership & Inquiry</h3>
+                        <p>Interested in exploring partnerships or have general inquiries? We'd love to hear from you.</p>
+                        <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                    </div>
+                </div>
+
+                <!-- Unsolicited Application Form -->
+                <div id="unsolicited-form" class="form-section">
+                    <h2>Unsolicited Application</h2>
+                    <form class="application-form" onsubmit="handleUnsoliciedSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="app-name">Full Name</label>
+                                <input type="text" id="app-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="app-email">Email</label>
+                                <input type="email" id="app-email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="app-phone">Phone</label>
+                                <input type="tel" id="app-phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="app-linkedin">LinkedIn Profile</label>
+                                <input type="url" id="app-linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="app-portfolio">Portfolio/Website (Optional)</label>
+                            <input type="url" id="app-portfolio" name="portfolio" placeholder="https://yourportfolio.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="app-interests">What interests you about AILE Robotics?</label>
+                            <textarea id="app-interests" name="interests" rows="4" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="app-experience">Tell us about your relevant experience</label>
+                            <textarea id="app-experience" name="experience" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="app-resume">Resume/CV (Paste content or link)</label>
+                            <textarea id="app-resume" name="resume" rows="3" placeholder="Paste your resume content or provide a link"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 AILE Robotics. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="connect.html">Connect</a></li>
+                <li><a href="jobs.html">Careers</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

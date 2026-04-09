@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - AILE Robotics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Ʌ<span class="logo-i">I</span>LE</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="connect.html" class="nav-link">Connect</a></li>
+                <li><a href="jobs.html" class="nav-link active">Careers</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Join Our Team</h1>
+        <p>We're looking for talented individuals to help us build the future.</p>
+    </section>
+
+    <!-- Jobs Section -->
+    <section class="jobs-section">
+        <div class="container">
+            <!-- Job Filters -->
+            <div class="filters">
+                <input type="text" id="search-jobs" class="search-input" placeholder="Search positions...">
+                <select id="filter-dept" class="filter-select">
+                    <option value="">All Departments</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="research">Research</option>
+                    <option value="operations">Operations</option>
+                    <option value="business">Business Development</option>
+                </select>
+            </div>
+
+            <!-- Job Listings -->
+            <div class="jobs-list" id="jobs-container">
+                <!-- Job postings will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Details Modal -->
+    <div id="job-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeJobModal()">&times;</span>
+            <div id="job-detail-content">
+                <!-- Job details will be loaded here -->
+            </div>
+            <button class="btn btn-primary" onclick="openApplicationForm()">Apply Now</button>
+        </div>
+    </div>
+
+    <!-- Application Modal -->
+    <div id="application-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeApplicationModal()">&times;</span>
+            <h2>Apply for Position</h2>
+            <form class="application-form" onsubmit="handleJobApplication(event)">
+                <input type="hidden" id="job-id" name="job_id">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="job-app-name">Full Name</label>
+                        <input type="text" id="job-app-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-app-email">Email</label>
+                        <input type="email" id="job-app-email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="job-app-phone">Phone</label>
+                        <input type="tel" id="job-app-phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-app-linkedin">LinkedIn Profile</label>
+                        <input type="url" id="job-app-linkedin" name="linkedin">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="job-app-cover">Cover Letter</label>
+                    <textarea id="job-app-cover" name="cover_letter" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="job-app-resume">Resume Link or Content</label>
+                    <textarea id="job-app-resume" name="resume" rows="3" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 AILE Robotics. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="connect.html">Connect</a></li>
+                <li><a href="jobs.html">Careers</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
