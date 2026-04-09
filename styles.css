@@ -87,6 +87,8 @@ h6 {
     font-weight: 700;
     position: relative;
     display: inline-block;
+    line-height: 1;
+    --dot-x-adjust: -0.03em;
 }
 
 .logo-i::after {
@@ -96,9 +98,9 @@ h6 {
     height: 0.2em;
     border-radius: 50%;
     background-color: var(--accent-green);
-    top: 0.06em;
+    top: -0.12em;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(calc(-50% + var(--dot-x-adjust)), -100%);
 }
 
 .nav-menu {
