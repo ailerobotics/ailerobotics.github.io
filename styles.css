@@ -730,25 +730,6 @@ h6 {
     color: var(--accent-yellow);
 }
 
-.footer-seal {
-    margin-top: 26px;
-    display: flex;
-    justify-content: center;
-}
-
-.footer-seal img {
-    width: 74px;
-    height: auto;
-    opacity: 0.9;
-    border-radius: 8px;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.footer-seal a:hover img {
-    opacity: 1;
-    transform: translateY(-2px);
-}
-
 /* Responsive */
 @media (max-width: 768px) {
     .nav-menu {
