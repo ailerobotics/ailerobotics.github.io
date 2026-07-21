@@ -13,9 +13,9 @@
             <div class="logo">Ʌ<span class="logo-i">I</span>LE</div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="connect.html" class="nav-link">Connect</a></li>
                 <li><a href="jobs.html" class="nav-link active">Careers</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="contact.html?subject=Pilot+Project+Inquiry" class="nav-cta">Book a Pilot</a></li>
             </ul>
         </div>
     </nav>
@@ -44,6 +44,70 @@
             <!-- Job Listings -->
             <div class="jobs-list" id="jobs-container">
                 <!-- Job postings will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Unsolicited Application Section -->
+    <section class="connect-section">
+        <div class="container">
+            <div id="unsolicited-form" class="form-section">
+                <h2>Unsolicited Application</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 35px; max-width: 640px; line-height: 1.8;">Don't see a role that fits? Tell us why you'd be a great fit for AILE Robotics, even if there isn't a specific open position, and we'll reach out when the right opportunity opens up.</p>
+
+                <div id="form-status" class="form-status hidden"></div>
+
+                <form class="application-form" action="https://formsubmit.co/ailerobotics@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New unsolicited application - AILE Robotics">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_next" value="https://ailerobotics.com/jobs.html?sent=1">
+                    <input type="text" name="_honey" style="display:none">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="app-name">Full Name</label>
+                            <input type="text" id="app-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="app-email">Email</label>
+                            <input type="email" id="app-email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="app-phone">Phone</label>
+                            <input type="tel" id="app-phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="app-linkedin">LinkedIn Profile</label>
+                            <input type="url" id="app-linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="app-portfolio">Portfolio/Website (Optional)</label>
+                        <input type="url" id="app-portfolio" name="portfolio" placeholder="https://yourportfolio.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="app-interests">What interests you about AILE Robotics?</label>
+                        <textarea id="app-interests" name="interests" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="app-experience">Tell us about your relevant experience</label>
+                        <textarea id="app-experience" name="experience" rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="app-resume">Resume/CV (Paste content or link)</label>
+                        <textarea id="app-resume" name="resume" rows="3" placeholder="Paste your resume content or provide a link"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                </form>
             </div>
         </div>
     </section>
@@ -110,9 +174,11 @@
             <p>&copy; 2026 AILE Robotics. All rights reserved.</p>
             <ul class="footer-links">
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="connect.html">Connect</a></li>
                 <li><a href="jobs.html">Careers</a></li>
             </ul>
+            <div class="footer-seal">
+                <a href="https://www.checkdomain.de/unternehmen/garantie/ssl/popup/" onclick="window.open(this.href + '?host=' + window.location.host,'','height=600,width=560,scrollbars=yes'); return false;"><img src="https://www.checkdomain.de/assets/bundles/web/app/widget/seal/img/ssl_certificate/de/150x150.png?20260720-124458" alt="SSL Certificate"></a>
+            </div>
         </div>
     </footer>
 

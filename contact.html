@@ -13,9 +13,9 @@
             <div class="logo">Ʌ<span class="logo-i">I</span>LE</div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="connect.html" class="nav-link">Connect</a></li>
                 <li><a href="jobs.html" class="nav-link">Careers</a></li>
                 <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="contact.html?subject=Pilot+Project+Inquiry" class="nav-cta">Book a Pilot</a></li>
             </ul>
         </div>
     </nav>
@@ -34,6 +34,10 @@
                 <div class="contact-info">
                     <h2>Get in Touch</h2>
                     <div class="info-item">
+                        <h3>Partnerships & Inquiries</h3>
+                        <p>Interested in exploring a partnership, booking a pilot project, or have a general question? Send us a message and we'll get back to you.</p>
+                    </div>
+                    <div class="info-item">
                         <h3>Follow Us</h3>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/company/ailerobotics/" target="_blank" class="social-link">LinkedIn</a>
@@ -42,7 +46,16 @@
                 </div>
 
                 <!-- Contact Form -->
-                <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                <div id="form-status" class="form-status hidden"></div>
+                <form class="contact-form" action="https://formsubmit.co/ailerobotics@gmail.com" method="POST">
+                    <!-- FormSubmit configuration -->
+                    <input type="hidden" name="_subject" value="New message from AILE Robotics website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_next" value="https://ailerobotics.com/contact.html?sent=1">
+                    <!-- Honeypot to reduce spam -->
+                    <input type="text" name="_honey" style="display:none">
+
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -71,9 +84,11 @@
             <p>&copy; 2026 AILE Robotics. All rights reserved.</p>
             <ul class="footer-links">
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="connect.html">Connect</a></li>
                 <li><a href="jobs.html">Careers</a></li>
             </ul>
+            <div class="footer-seal">
+                <a href="https://www.checkdomain.de/unternehmen/garantie/ssl/popup/" onclick="window.open(this.href + '?host=' + window.location.host,'','height=600,width=560,scrollbars=yes'); return false;"><img src="https://www.checkdomain.de/assets/bundles/web/app/widget/seal/img/ssl_certificate/de/150x150.png?20260720-124458" alt="SSL Certificate"></a>
+            </div>
         </div>
     </footer>
 

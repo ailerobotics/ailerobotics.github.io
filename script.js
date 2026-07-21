@@ -1,47 +1,21 @@
-// Sample Job Data
-const jobListings = [
-    {
-        id: 1,
-        title: 'Founding Engineer - Robotics AI & Multimodal Systems',
-        department: 'engineering',
-        type: 'Full-time',
-        location: 'Hybrid',
-        description: 'Stealth mode startup working at the intersection of robotics, manipulation, and AI based learning. Initial technical foundations already built, moving into deeper development and scaling. Full time role supported through a government innovation grant. Opportunity to grow into senior leadership or C level role as the company scales.',
-        requirements: [
-            'Strong background in robotics with focus on manipulation and control',
-            'Hands on experience with ROS or ROS2',
-            'Experience with robot kinematics, dynamics, motion planning, and control',
-            'Experience with AI based learning methods such as reinforcement learning, imitation learning, or self supervised learning',
-            'Experience with deep learning frameworks and perception pipelines',
-            'Experience with multimodal large models such as Vision Language Models and Vision Language Action models is a strong plus',
-            'System level thinker who enjoys connecting hardware, software, and learning',
-            'PhD in Robotics, AI, or related field is a plus but not mandatory',
-            'Entrepreneurial mindset with high ownership and curiosity',
-            'Eligibility to work full time under a government funded grant position'
-        ],
-        responsibilities: [
-            'Own and drive core robotics and AI development',
-            'Design system architecture across manipulation, learning, and perception',
-            'Develop and train learning pipelines including reinforcement and imitation learning',
-            'Make key technical decisions with long term scalability in mind',
-            'Work closely with founders on technical vision and roadmap',
-            'Help define engineering culture and future hiring'
-        ],
-        workOn: [
-            'Robotic manipulation systems including perception, planning, and control',
-            'Learning based approaches for robot skills, behaviors, and decision making',
-            'Integration of multimodal AI combining vision, language, and action',
-            'Vision Language Models and Vision Language Action models in robotic pipelines',
-            'Real world robotic experiments and sim to real transfer',
-            'Turning research ideas into deployable systems'
-        ]
-    }
-];
+// Job Data
+const jobListings = [];
 
 // Load job listings
 function loadJobListings() {
     const jobsContainer = document.getElementById('jobs-container');
     if (!jobsContainer) return;
+
+    if (jobListings.length === 0) {
+        jobsContainer.innerHTML = `
+            <div class="no-openings">
+                <h3>No open positions right now</h3>
+                <p>We're not actively hiring at the moment, but we're always glad to meet talented people. Send us an unsolicited application and we'll reach out when the right role opens up.</p>
+                <a href="#unsolicited-form" class="btn btn-secondary">Submit an Application</a>
+            </div>
+        `;
+        return;
+    }
 
     jobsContainer.innerHTML = jobListings.map(job => `
         <div class="job-card" onclick="openJobModal(${job.id})">
@@ -157,45 +131,25 @@ function closeApplicationModal() {
     document.getElementById('application-modal').classList.add('hidden');
 }
 
-// Handle form submissions
-function handleContactSubmit(event) {
-    event.preventDefault();
-    
-    const formData = {
-        type: 'contact',
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value,
-        timestamp: new Date().toISOString()
-    };
+// Form pages: pre-fill subject from URL (e.g. Book a Pilot Project),
+// and show a confirmation banner after a successful FormSubmit redirect.
+function setupFormPage() {
+    const params = new URLSearchParams(window.location.search);
 
-    console.log('Contact Form Submitted:', formData);
-    // You can send this data to a backend server here
-    alert('Thank you for your message! We will get back to you soon.');
-    event.target.reset();
-}
+    const subjectField = document.getElementById('subject');
+    const subjectParam = params.get('subject');
+    if (subjectField && subjectParam) {
+        subjectField.value = subjectParam;
+    }
 
-function handleUnsoliciedSubmit(event) {
-    event.preventDefault();
-
-    const formData = {
-        type: 'unsolicited_application',
-        name: document.getElementById('app-name').value,
-        email: document.getElementById('app-email').value,
-        phone: document.getElementById('app-phone').value,
-        linkedin: document.getElementById('app-linkedin').value,
-        portfolio: document.getElementById('app-portfolio').value,
-        interests: document.getElementById('app-interests').value,
-        experience: document.getElementById('app-experience').value,
-        resume: document.getElementById('app-resume').value,
-        timestamp: new Date().toISOString()
-    };
-
-    console.log('Unsolicited Application Submitted:', formData);
-    // You can send this data to a backend server here
-    alert('Thank you for your application! We appreciate your interest in AILE Robotics.');
-    event.target.reset();
+    if (params.get('sent') === '1') {
+        const banner = document.getElementById('form-status');
+        if (banner) {
+            banner.textContent = 'Thank you! Your submission has been received. We will get back to you soon.';
+            banner.classList.remove('hidden');
+            banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
 }
 
 function handleJobApplication(event) {
@@ -239,5 +193,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('jobs-container')) {
         loadJobListings();
         setupJobFilters();
+    }
+
+    // Form pages setup (subject pre-fill + sent confirmation)
+    if (document.getElementById('form-status')) {
+        setupFormPage();
     }
 });
