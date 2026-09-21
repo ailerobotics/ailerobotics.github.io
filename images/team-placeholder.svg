@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480" role="img" aria-label="Team member placeholder">
+  <rect width="480" height="480" fill="#1e252a"/>
+  <g fill="#3AAB74">
+    <circle cx="240" cy="188" r="78"/>
+    <path d="M240 286c-86 0-156 58-156 130v64h312v-64c0-72-70-130-156-130z"/>
+  </g>
+</svg>
